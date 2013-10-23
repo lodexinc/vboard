@@ -49,6 +49,7 @@ $(document).ready(function () {
         /* all the click events are here..
          * from each one, input fields and textarea are seperately sorted..as per their api!
          */
+         // below are the input events and the value to be added to input fields..
         $('input').focus(function () {
             $('#vboard').fadeIn(100);
             LastFocused = 'input[name="' + $(this).attr('name') + '"]';
@@ -59,6 +60,7 @@ $(document).ready(function () {
         $('input').blur(function () {
             $('#vboard').fadeOut(100);
         });
+        // events for textarea..
         $('textarea').focus(function () {
             $('#vboard').fadeIn(100);
             LastFocused = 'textarea[name="' + $(this).attr('name') + '"]';
@@ -68,6 +70,7 @@ $(document).ready(function () {
         $('textarea').blur(function () {
             $('#vboard').fadeOut(100);
         });
+        // click events on the buttons of the vboard. 
         $('#vboard li').click(function () {
             CurVal = $(LastFocused).val();
             if ($(this).attr('id') == "shift") {
