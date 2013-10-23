@@ -4,6 +4,7 @@ $(document).ready(function () {
         var LastFocused = "";
         var CurVal = "";
         var inputType = "";
+        // apply the styles for the vboard..
         $('.vboard-buttons').css('margin', '5px');
         $('.vboard-buttons div').css('max-width', '100%');
         $('.vboard-buttons').css('padding', '5px');
@@ -45,6 +46,9 @@ $(document).ready(function () {
         $('#spcbr').css('margin', '0 auto');
         $('#spcbr').css('max-width', '600px');
         $('#spcbr').css('min-width', '600px');
+        /* all the click events are here..
+         * from each one, input fields and textarea are seperately sorted..as per their api!
+         */
         $('input').focus(function () {
             $('#vboard').fadeIn(100);
             LastFocused = 'input[name="' + $(this).attr('name') + '"]';
@@ -64,7 +68,6 @@ $(document).ready(function () {
         $('textarea').blur(function () {
             $('#vboard').fadeOut(100);
         });
-        // battery khatam hogai yar :( acha ab sun..kal subah yeh toggle ka masla solve krio!:) Good luck ..
         $('#vboard li').click(function () {
             CurVal = $(LastFocused).val();
             if ($(this).attr('id') == "shift") {
